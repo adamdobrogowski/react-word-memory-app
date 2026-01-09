@@ -22,7 +22,7 @@ export default function Welcome() {
           ></path>
         </svg>
         <br />
-        Start your challenge today
+        Start the challenge today!
       </h6>
       <div>
         <input type="text" placeholder="Enter your name..." />

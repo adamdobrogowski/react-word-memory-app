@@ -14,33 +14,104 @@
 *
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Press+Start+2P&display=swap");
 
+/* :root {
+    --background-primary: white;
+    --background-secondary: '';
+    --background-tertiary: #dbeafe;
+    --background-accent: '';
+    --background-compliment: '';
+    --background-gradient: '';
+    --background-muted: #f8fafc;
+
+    --color-primary: #030615;
+    --color-secondary: '';
+    --color-tertiary: '';
+    --color-accent: '';
+    --color-compliment: '';
+    --color-gradient: '';
+    --color-muted: ;
+    --color-link: #2563eb;
+    --color-link-transparent: rgba(37, 99, 235, 0.1);
+
+    --color-success: '';
+    --color-warning: '';
+    --color-error: '';
+    --color-info: '';
+    --color-highlight: #fef9c3;
+
+    --gradient-start: #9580ff;
+    --gradient-end: #80ffea;
+
+    --border-primary: #f1f5f9;
+    --border-secondary: #bed1e7;
+    --border-highlight: #64748b;
+    --border-tertiary: '';
+
+    --shadow-dark: '';
+    --shadow-light: '';
+    --shadow-text: '';
+
+    --padding-small: 1rem;
+    --padding-large: 2rem;
+
+    --border-radius-small: 0.5rem;
+    --border-radius-large: 0.75rem;
+    --highlight-border-radius: 0.5rem;
+
+    --text-selection: '';
+} */
+
+/* @media (prefers-color-scheme: dark) { */
 :root {
-  /* Tło ciemne */
-  --background-primary: #05070f;
-  --background-secondary: #0e101e;
+  --background-primary: #030615;
+  --background-secondary: rgb(23 37 84);
   --background-tertiary: #121424;
+  --background-accent: "";
+  --background-compliment: "";
+  --background-gradient: "";
   --background-muted: #1a1e32;
 
-  /* Jasne napisy */
-  --color-primary: #f8fafc;
+  --color-primary: rgb(219 234 254);
+  --color-secondary: "";
+  --color-tertiary: "";
+  --color-accent: "";
+  --color-compliment: "";
+  --color-gradient: "";
+  --color-muted: ;
   --color-link: #60a5fa;
-  --color-link-transparent: rgba(96, 165, 250, 0.1);
+  --color-link-transparent: rgba(37, 99, 235, 0.1);
 
-  /* Ramki dopasowane do ciemnego tła */
+  --color-success: "";
+  --color-warning: "";
+  --color-error: "";
+  --color-info: "";
+  --color-highlight: #fef9c3;
+
+  --gradient-start: #0084ff;
+  --gradient-end: #00fffb;
+
   --border-primary: #29325b;
-  --border-secondary: #323c71;
+  --border-secondary: #93c5fd;
   --border-highlight: #4649af;
+  --border-tertiary: "";
 
-  --gradient-start: #9580ff;
-  --gradient-end: #80ffea;
+  --shadow-dark: "";
+  --shadow-light: "";
+  --shadow-text: "";
 
   --padding-small: 1rem;
   --padding-large: 2rem;
+
   --border-radius-small: 0.5rem;
   --border-radius-large: 0.75rem;
+  --highlight-border-radius: 0.5rem;
+
+  --text-selection: "";
 }
+/* } */
 
 * {
   margin: 0;
@@ -61,7 +132,7 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-image: linear-gradient(
-    135deg,
+    180deg,
     var(--gradient-start) 0,
     var(--gradient-end) 100%
   );
@@ -77,35 +148,44 @@ h4,
 h5,
 h6,
 button {
-  font-family: "Grenze", serif;
+  font-family: "Press Start 2P", serif;
   width: fit-content;
 }
 
-h1 {
+/* h1, */
+.text-large {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-h2 {
+h1 {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-h3 {
+.special-shadow {
+  text-shadow: -1px -1px 4px #0022ffbf, 2px 2px 10px #0022ffbf,
+    0 0 20px #0022ffbf;
+  color: white;
+}
+
+h2 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-h4 {
+h3,
+.text-medium {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-h5 {
+h4 {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
+h5,
 h6 {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -222,9 +302,10 @@ a:hover {
 
 .link-button {
   border: none;
-  color: var(--color-link);
+  background: var(--background-primary);
+  color: var(--color-primary);
   box-shadow: none;
-  padding: 0;
+  padding: 0.5rem 1rem;
 }
 
 .link-button:hover {
@@ -376,7 +457,7 @@ input[type="radio"] {
 
 button {
   color: var(--color-primary);
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   width: fit-content;
   font-family: inherit;
   font-size: inherit;
@@ -454,7 +535,7 @@ input[type="radio"] {
   position: relative;
   margin: 0.5rem 0.25rem 0.5rem 0.5rem;
   /* margin-right: 0.33em;
-    margin-top: 0.31em; */
+margin-top: 0.31em; */
 }
 
 input[type="checkbox"] {
@@ -553,7 +634,7 @@ details[open] summary {
 }
 
 .card,
-.card-button {
+.button-card {
   background-color: var(--background-muted);
   color: var(--color-primary);
   padding: 1rem;
@@ -564,15 +645,15 @@ details[open] summary {
   border: 1px solid var(--color-link-transparent);
 }
 
-.card-button {
+.button-card {
   border: 1px solid var(--border-secondary);
 }
 
-.card-button {
+.button-card {
   box-shadow: none;
 }
 
-.card-button:hover {
+.button-card:hover {
   transform: translate(0);
   box-shadow: none;
   border-color: var(--border-highlight);
@@ -606,31 +687,34 @@ details[open] summary {
     line-height: 1.5rem;
   }
 
-  h1 {
+  /* h1, */
+  .text-large {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 
-  h2 {
+  h1 {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 
-  h3 {
+  h2 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  h4 {
+  h3,
+  .text-medium {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  h5 {
+  h4 {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
+  h5,
   h6 {
     font-size: 1rem;
     line-height: 1.5rem;
